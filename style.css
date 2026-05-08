@@ -3,7 +3,7 @@ body {
     /* 背景灰白 */
     text-align: center;
     /* 文字居中 */
-    font-family: "微软雅黑";
+    font-family: "Arial", sans-serif;
     /* 字体 */
     padding-top: 50px;
 }
