@@ -1,11 +1,12 @@
 body {
     background-color: #ffffff;
     /* 背景灰白 */
-    text-align: center;
+    text-align: justify;
     /* 文字居中 */
     font-family: "Arial", sans-serif;
     /* 字体 */
     padding-top: 50px;
+    width: 80%;
 }
 
 h1 {
@@ -33,6 +34,7 @@ button {
     /* 核心属性：强制左对齐 */
     line-height: 1.6;
 }
+
 /* 可移至 main/style.css */
 .back-to-main {
     position: fixed;
@@ -51,7 +53,7 @@ button {
     padding: 10px 16px;
     border-radius: 6px;
     font-weight: 600;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: background .15s ease, transform .08s ease;
     cursor: pointer;
 }
@@ -64,7 +66,7 @@ button {
 
 .back-to-main a:focus,
 .back-to-main a:focus-visible {
-    outline: 3px solid rgba(0,122,204,0.25);
+    outline: 3px solid rgba(0, 122, 204, 0.25);
     outline-offset: 2px;
 }
 
