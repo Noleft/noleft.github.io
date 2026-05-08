@@ -20,3 +20,10 @@ button {
     border: none;
     border-radius: 5px;
 }
+
+.justify {
+    text-align: justify;
+    /* 核心属性：开启两端对齐 */
+    line-height: 1.6;
+    /* 建议：配合适当的行高，阅读体验更好 */
+}
