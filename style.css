@@ -1,5 +1,5 @@
 body {
-    background-color: #f0f2f5;
+    background-color: #ffffff;
     /* 背景灰白 */
     text-align: center;
     /* 文字居中 */
@@ -27,7 +27,9 @@ button {
     line-height: 1.6;
     /* 建议：配合适当的行高，阅读体验更好 */
 }
+
 .left {
-    text-align: left; /* 核心属性：强制左对齐 */
+    text-align: left;
+    /* 核心属性：强制左对齐 */
     line-height: 1.6;
 }
