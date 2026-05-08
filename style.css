@@ -1,0 +1,22 @@
+body {
+    background-color: #f0f2f5;
+    /* 背景灰白 */
+    text-align: center;
+    /* 文字居中 */
+    font-family: "微软雅黑";
+    /* 字体 */
+    padding-top: 50px;
+}
+
+h1 {
+    color: #ff5722;
+    /* 标题橙色 */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
