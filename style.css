@@ -27,3 +27,7 @@ button {
     line-height: 1.6;
     /* 建议：配合适当的行高，阅读体验更好 */
 }
+.left-align {
+    text-align: left; /* 核心属性：强制左对齐 */
+    line-height: 1.6;
+}
