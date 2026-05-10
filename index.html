@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0">
-    <title>Home page of research group
-    </title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <title>Home page of research group</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <h1>
-        Welcome professors and research fellows! We are guys from a semiconductor materials research group. We mainly focus on silicon materials and we are recently paying more attention to other semiconductor materials. Here you will see what we
-        have done and what we are going to do in our research career.
-    </h1>
-    <h2 class="left">
-        Doctors:
-    </h2>
-    <h3>
-        <a href="zirui/index.html">Zirui He</a>
-    </h3>
+    <header class="hero">
+        <div class="hero-text">
+            <p class="eyebrow">Semiconductor Materials Research Group</p>
+            <h1>Advancing silicon and emerging semiconductor materials</h1>
+            <p class="lead">
+                We study the fundamentals and applications of silicon and other semiconductor materials,
+                connecting material mechanisms with device performance.
+            </p>
+            <div class="hero-actions">
+                <a class="btn" href="#members">Meet the team</a>
+                <!-- <a class="btn ghost" href="zirui/index.html">Zirui He</a> -->
+            </div>
+        </div>
+        <div class="hero-media">
+            <img src="picture.png" alt="Semiconductor materials research" />
+        </div>
+    </header>
 
+    <main class="content">
+        <section id="members" class="card">
+            <h2>Doctors</h2>
+            <ul class="member-list">
+                <li><a href="zirui/index.html">Zirui He</a></li>
+            </ul>
+        </section>
+    </main>
 </body>
-
 </html>
