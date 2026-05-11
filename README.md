@@ -19,7 +19,9 @@ $BROWSER index.html
 或使用简单静态服务器：
 ```sh
 python3 -m http.server 8000
-# 然后访问 http://localhost:8000/index.html
+```
+
+然后访问 http://localhost:8000/index.html
 
 # 部署
 仓库配置了 GitHub Pages 自动部署（见 [.github/workflows/static.yml](.github/workflows/static.yml)）。推送到 `main` 分支后，Actions 会构建并部署站点。
