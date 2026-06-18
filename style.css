@@ -346,6 +346,31 @@ body {
     gap: 24px;
 }
 
+.work-hero-card {
+    display: block;
+}
+
+.work-hero-card h1 {
+    max-width: 760px;
+}
+
+.work-detail .card {
+    overflow: hidden;
+}
+
+.work-detail .research-figure img {
+    max-height: 460px;
+    object-fit: contain;
+}
+
+.work-detail .figure-wide img {
+    max-height: 560px;
+}
+
+.work-detail .figure-panel {
+    max-width: 100%;
+}
+
 .narrative-intro h2,
 .narrative-section h2 {
     margin-bottom: 12px;
