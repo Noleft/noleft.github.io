@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <title>Silicon-vacancy ML potential comparisons</title>
+    <link rel="stylesheet" href="../../../style.css" />
+</head>
+
+<body>
+    <header class="profile-header">
+        <div class="profile-card">
+            <div>
+                <p class="eyebrow">Research note, Xinyi ZHONG</p>
+                <h1>Symmetry-breaking fingerprints for silicon-vacancy ML potential comparisons</h1>
+                <p class="lead">
+                    This page records a DFT-based comparison for the Jahn-Teller distortion of the silicon vacancy,
+                    including local distortions, a static endpoint path, spin-polarized references, and a paired
+                    perturbation check around the low-symmetry structure.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn" href="#reference">Read note</a>
+                    <a class="btn ghost" href="../../index.html">Back to Xinyi ZHONG</a>
+                    <a class="btn ghost" href="../../../index.html">Main page</a>
+                </div>
+            </div>
+        </div>
+
+        <aside class="profile-facts card">
+            <h2>Quick facts</h2>
+            <ul class="facts-list">
+                <li><strong>System:</strong> 3x3x3 diamond-Si supercell with one vacancy</li>
+                <li><strong>Size:</strong> 215 Si atoms after removing one atom</li>
+                <li><strong>References:</strong> Td-like and relaxed low-symmetry structures</li>
+                <li><strong>Models:</strong> UMA, CHGNet, MACE-MPA-0</li>
+            </ul>
+        </aside>
+    </header>
+
+    <main class="content work-detail">
+        <section class="card narrative-intro">
+            <p class="work-meta">Research note, June 2026</p>
+            <h2>Overview</h2>
+            <p>
+                The silicon vacancy is a useful example for checking how a potential-energy model treats local
+                symmetry breaking. In an ideal diamond-Si vacancy, the four nearest-neighbor Si atoms form a Td-like
+                local environment. A lower-symmetry structure can be reached when these atoms become inequivalent,
+                producing a Jahn-Teller-like distortion around the vacancy.
+            </p>
+            <p>
+                The analysis here does not treat the problem as a single yes-or-no question. It separates several
+                related checks: a local pairing-channel scan near the Td-like reference, a larger static path from the
+                Td-like structure to a low-symmetry endpoint, spin-dependent DFT endpoint ordering, and a local
+                curvature check around the low-symmetry reference.
+            </p>
+
+            <dl class="key-results compact-results">
+                <div>
+                    <dt>Local scan</dt>
+                    <dd>37 structures from three pairing channels around the Td-like reference</dd>
+                </div>
+                <div>
+                    <dt>Endpoint path</dt>
+                    <dd>Six images from &lambda;=0.0 to &lambda;=1.0 between the two references</dd>
+                </div>
+                <div>
+                    <dt>Pair fingerprint</dt>
+                    <dd>84 one-sided perturbations, grouped into 42 plus/minus pairs</dd>
+                </div>
+                <div>
+                    <dt>Energy reference</dt>
+                    <dd>DFT energy(&sigma; -> 0) for the main geometry-only comparison</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section id="reference" class="card narrative-section">
+            <div class="narrative-grid">
+                <div class="section-copy">
+                    <p class="section-kicker">Reference structures</p>
+                    <h2>Two local vacancy geometries</h2>
+                    <p>
+                        Two geometries are used as references. The first is a Td-like vacancy reference where the six
+                        pair distances among the four vacancy-nearest-neighbor Si atoms remain degenerate. The second
+                        is a relaxed low-symmetry reference with a visible pair-distance splitting.
+                    </p>
+                    <p>
+                        In the measured core geometry, the Td-like reference has a pair splitting of 0.000000 Angstrom,
+                        while the low-symmetry reference has a splitting of 0.493740 Angstrom. These two structures are
+                        used as the endpoints for the path and as centers for the local checks.
+                    </p>
+                </div>
+                <figure class="research-figure figure-panel">
+                    <img src="../../figures/fig1_reference_pair_distances.png"
+                        alt="Nearest-neighbor pair distances for Td-like and low-symmetry silicon-vacancy references" />
+                    <figcaption>
+                        Pair distances among the four Si atoms nearest to the vacancy. The low-symmetry reference shows
+                        two shorter and four longer core-pair distances.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="card narrative-section">
+            <div class="section-copy section-copy-wide">
+                <p class="section-kicker">Local scan and endpoint path</p>
+                <h2>Local response and full static path are separate checks</h2>
+                <p>
+                    Starting from the Td-like reference, local distortions were constructed along three
+                    symmetry-equivalent pairing channels: (12|34), (13|24), and (14|23). Each channel was sampled at
+                    Q=&plusmn;0.02, &plusmn;0.04, &plusmn;0.06, &plusmn;0.08, &plusmn;0.10, and &plusmn;0.12 Angstrom, plus the Q=0 reference.
+                    This gives 37 structures for the local scan.
+                </p>
+                <p>
+                    On the DFT energy(&sigma; -> 0) surface, this local scan gives a small energy lowering. The minimum
+                    occurs near Q=+0.02 Angstrom, with DeltaE about -3.806 meV, and the three channel minima differ by
+                    less than 0.001 meV. This local response is then compared with a larger six-image static path from
+                    the Td-like endpoint to the low-symmetry endpoint.
+                </p>
+            </div>
+
+            <figure class="research-figure figure-panel figure-wide">
+                <img src="../../figures/fig2_dft_td_to_jt_path.png"
+                    alt="DFT static path from Td-like to low-symmetry silicon-vacancy structures" />
+                <figcaption>
+                    DFT static path from the Td-like reference to the low-symmetry endpoint. The endpoint is lower than
+                    the Td-like reference by about 203 meV, while the core-pair splitting increases along the path.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="card narrative-section">
+            <div class="narrative-grid reverse-grid">
+                <figure class="research-figure figure-panel">
+                    <img src="../../figures/fig3_full_path_uma_chgnet_mace_mpa.png"
+                        alt="Full path comparison for DFT, UMA, CHGNet, and MACE-MPA-0" />
+                    <figcaption>
+                        Relative energies along the same Td-to-low-symmetry static path for DFT, UMA, CHGNet, and
+                        MACE-MPA-0.
+                    </figcaption>
+                </figure>
+                <div class="section-copy">
+                    <p class="section-kicker">ML potential comparison</p>
+                    <h2>Model trends along the same path</h2>
+                    <p>
+                        The six-image path provides a fixed set of structures for comparing relative energy trends. In
+                        this comparison, DFT gives a low-symmetry endpoint about 203.460 meV below the Td-like endpoint.
+                        UMA also places the low-symmetry endpoint below the Td-like endpoint, with an endpoint value of
+                        -94.246 meV relative to the Td-like structure.
+                    </p>
+                    <p>
+                        CHGNet and MACE-MPA-0 give different endpoint ordering on the same static path. Their endpoint
+                        relative energies are 591.431 meV and 163.073 meV, respectively, using each model's internal
+                        relative energy along this path.
+                    </p>
+                </div>
+            </div>
+
+            <div class="metric-table-wrap">
+                <table class="metric-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Endpoint DeltaE (meV)</th>
+                            <th>Path MAE (meV)</th>
+                            <th>Path RMSE (meV)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>UMA</td>
+                            <td>-94.246</td>
+                            <td>71.498</td>
+                            <td>88.553</td>
+                        </tr>
+                        <tr>
+                            <td>CHGNet</td>
+                            <td>591.431</td>
+                            <td>353.504</td>
+                            <td>454.684</td>
+                        </tr>
+                        <tr>
+                            <td>MACE-MPA-0</td>
+                            <td>163.073</td>
+                            <td>155.753</td>
+                            <td>209.312</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card narrative-section">
+            <div class="narrative-grid">
+                <div class="section-copy">
+                    <p class="section-kicker">Spin-polarized references</p>
+                    <h2>Endpoint ordering depends on the DFT spin setting</h2>
+                    <p>
+                        The main path comparison uses the non-spin DFT energy(&sigma; -> 0) surface as a controlled
+                        geometry-only reference. Spin-polarized DFT gives additional endpoint-ordering behavior. In the
+                        non-spin and fixed M=0 references, the low-symmetry endpoint is about 203 meV lower than the
+                        Td-like endpoint.
+                    </p>
+                    <p>
+                        Under the default spin-polarized branch, the low-symmetry endpoint is about 35 meV higher than
+                        the Td-like endpoint. With NUPDOWN=2, the low-symmetry endpoint is about 532 meV higher. This
+                        comparison is kept separate from the geometry-only MLIP path comparison.
+                    </p>
+                </div>
+                <figure class="research-figure figure-panel">
+                    <img src="../../figures/fig4_spin_endpoint_ordering.png"
+                        alt="Spin-dependent endpoint ordering in DFT for the silicon vacancy" />
+                    <figcaption>
+                        Endpoint energy ordering for different DFT spin settings. Negative values indicate the
+                        low-symmetry endpoint is lower than the Td-like endpoint.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="card narrative-section">
+            <div class="section-copy section-copy-wide">
+                <p class="section-kicker">Low-symmetry perturbations</p>
+                <h2>Paired perturbations around the low-symmetry reference</h2>
+                <p>
+                    A separate paired-perturbation set was built around the low-symmetry reference. Seven local modes
+                    were used, with six amplitudes and two signs for each mode. This gives 84 structures, grouped into
+                    42 plus/minus pairs. The pair-even component measures the local curvature, while one-sided energy
+                    changes show whether the chosen reference is stationary on the tested surface.
+                </p>
+                <p>
+                    For UMA, the pair-even values follow the DFT trend closely in this set. The even Pearson
+                    correlation is 0.999521, the even Spearman correlation is 0.998541, and the mean stiffness ratio
+                    k_UMA/k_DFT is 0.903315. At the same time, 23 of 84 one-sided UMA perturbations are lower than the
+                    UMA energy at the DFT low-symmetry reference, indicating a difference in the local stationary point.
+                </p>
+            </div>
+
+            <figure class="research-figure figure-panel figure-wide">
+                <img src="../../figures/fig5_uma_two_center_diagnostic.png"
+                    alt="UMA two-center diagnostic for local Jahn-Teller topology and low-symmetry basin curvature" />
+                <figcaption>
+                    A two-center view of UMA: the Td-centered scan describes local Jahn-Teller response, while the
+                    low-symmetry-centered paired perturbations compare local curvature and stationary-point behavior.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="card narrative-section">
+            <h2>Takeaways</h2>
+            <ul class="work-points takeaway-list">
+                <li>
+                    The local Jahn-Teller scan and the full Td-to-low-symmetry path describe different parts of the
+                    same defect landscape.
+                </li>
+                <li>
+                    The DFT local scan has a meV-scale energy lowering, while the full static path gives an endpoint
+                    stabilization of about 203 meV on the non-spin reference surface.
+                </li>
+                <li>
+                    The MLIP comparison depends on which part of the landscape is tested: endpoint ordering, path shape,
+                    curvature, and spin-reference choice are separate pieces of information.
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
